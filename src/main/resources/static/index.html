@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <title>Управление на Прегледи</title>-->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container" style="display: flex;">
+    <div id="form-container" style="flex: 1;">
+        <!--<div style="display: flex; justify-content: space-between; align-items: ;">
+            &lt;!&ndash; Линк за добавяне на нов преглед (вече няма да скрива или показва формата) &ndash;&gt;
+            <a href="#" id="add-new-appointment-link" onclick="resetForm()" style="color: blue; text-decoration: underline; cursor: pointer;">Добавяне на нов преглед</a>
+
+            <label for="searchName">Име:</label>
+            <input type="text" id="searchName" placeholder="Търсене по име">
+
+            <label for="searchPhone" style="margin-left: 20px;">Търсене по телефон:</label>
+            <input type="text" id="searchPhone" placeholder="Търсене по телефон">
+
+            &lt;!&ndash; Бутон за изтриване на преглед (ще се активира само ако има избран преглед) &ndash;&gt;
+            <button id="delete-appointment-button" style="color: red; background: none; border: none; cursor: pointer; text-decoration: underline;" disabled>Изтриване на преглед</button>
+        </div>-->
+
+        <!-- Форма за въвеждане на прегледи (вече няма да бъде скривана) -->
+        <form id="appointment-form" style="margin-top: 20px;">
+
+            <a href="#" id="add-new-appointment-link" onclick="resetForm()"
+               style="color: black; background-color: lightblue; padding: 8px 16px; border-radius: 5px; text-decoration: none; display: inline-block; margin-bottom: 5px; font-family: Arial, sans-serif;">Добавяне преглед</a>
+
+
+
+            <!--            <label for="searchName">Име:</label>-->
+            <input type="text" id="searchName" placeholder="Търсене по име">
+
+<!--            <label for="searchPhone" style="margin-left: 20px;">Търсене по телефон:</label>-->
+            <input type="text" id="searchPhone" placeholder="Търсене по телефон">
+
+
+            <label for="name">Име на пациента:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="email">Имейл:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="appointmentDate">Дата на прегледа:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Час на прегледа:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <label for="additionalInfo">Допълнителна информация:</label>
+            <textarea id="additionalInfo" name="additionalInfo"></textarea>
+
+            <button type="submit">Запази прегледа</button>
+            <button id="delete-appointment-button"
+                    style="color: black; background-color: lightcoral; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-family: Arial, sans-serif; display: inline-block;"
+                    disabled>Изтриване преглед</button>
+        </form>
+
+        <!-- Модален прозорец за потвърждение на изтриването -->
+        <div id="delete-confirmation" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #ccc; background-color: white; padding: 20px; z-index: 1000; border-radius: 5px; text-align: center;">
+            <p>Сигурни ли сте, че искате да изтриете този преглед?</p>
+            <button id="confirm-delete-yes" style="background-color: #ff4d4d; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Да</button>
+            <button id="confirm-delete-no" style="background-color: #ccc; color: black; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Не</button>
+        </div>
+    </div>
+
+    <div id="calendar-container" style="flex: 2; margin-left: 20px;">
+                <div id='calendar'></div>
+    </div>
+</div>
+
+<!-- Включване на FullCalendar скриптове и нашия скрипт -->
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+<script src="script.js"></script>
+</body>
+</html>

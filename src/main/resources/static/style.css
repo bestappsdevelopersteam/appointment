@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    display: flex;
+}
+
+#form-container {
+    width: 50%;
+    padding-right: 10px;
+
+#form-container h2, #calendar-container h2 {
+    text-align: center;
+}
+
+form {
+    display: block;
+    flex-direction: column;
+}
+
+form label, form input, form textarea, form button {
+    margin: 10px 0;
+    width: 100%;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#calendar {
+    width: 100%; /* Задава пълна ширина на календара */
+    margin: 0; /* Премахва отстоянията */
+    padding: 0; /* Премахва padding */
+    box-sizing: border-box; /* Прави ширината да включва padding и border */
+}
+
+#calendar-container {
+    width: 50%;
+
+}
+
+/* Нов стил за центриране на главния контейнер */
+#container {
+    max-width: 1200px; /* Максимална ширина */
+    margin: 0 auto; /* Центриране */
+    padding: 20px; /* Разстояние между елементите */
+}
