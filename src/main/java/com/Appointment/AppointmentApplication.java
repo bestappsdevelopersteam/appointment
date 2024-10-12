@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class AppointmentApplication {
 
 	@Autowired
-	private NotificationService notificationService;
+	private final NotificationService notificationService;
 
     public AppointmentApplication(NotificationService notificationService) {
         this.notificationService = notificationService;
